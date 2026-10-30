@@ -1,0 +1,18 @@
+# Archives
+*.zip
+*.tar.gz
+*.rar
+
+# Dependency directories
+node_modules/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.log

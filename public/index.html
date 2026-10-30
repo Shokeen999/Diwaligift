@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>The Royal Diwali Box — 4K Scroll Experience</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Cinzel+Decorative:wght@700&family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🪔</text></svg>">
+</head>
+<body>
+
+  <!-- Background Ambient Glow & Particle FX -->
+  <div class="ambient-glow glow-1"></div>
+  <div class="ambient-glow glow-2"></div>
+  <canvas id="particles-canvas" class="particles-canvas"></canvas>
+
+  <!-- Sticky Full-Screen 4K Frame Canvas -->
+  <div class="canvas-viewport" id="canvas-viewport">
+    <canvas id="scroll-canvas"></canvas>
+    <div class="vignette-overlay"></div>
+  </div>
+
+  <!-- Loading Screen -->
+  <div class="loader-screen" id="loader-screen">
+    <div class="loader-card">
+      <div class="loader-diya-glow">
+        <span class="diya-flame">🔥</span>
+        <span class="diya-base">🪔</span>
+      </div>
+      <h2 class="loader-title">The Royal Diwali Box</h2>
+      <p class="loader-subtitle">Preparing 4K Cinematic Frame Sequence...</p>
+      
+      <div class="loader-progress-track">
+        <div class="loader-progress-bar" id="loader-progress-bar"></div>
+      </div>
+      
+      <div class="loader-meta">
+        <span id="loader-status-text">Loading initial frames...</span>
+        <span id="loader-percent">0%</span>
+      </div>
+
+      <button id="loader-start-btn" class="loader-btn hidden">
+        <span>Enter Experience</span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Scroll Journey: Tall Track with Storytelling Overlays -->
+  <main class="scroll-container" id="scroll-container">
+    
+    <!-- Hero / Chapter 1 -->
+    <section class="story-section" id="section-0" data-index="0">
+      <div class="story-card card-left">
+        <div class="card-badge">THE ROYAL UNVEILING • CHAPTER I</div>
+        <h1 class="card-title">The Royal Diwali Box</h1>
+        <p class="card-desc">
+          An heirloom celebration crafted in radiant crimson and 24K gold foil. 
+          Enclosed within lies the timeless heritage of the festival of lights.
+        </p>
+        <div class="card-specs">
+          <div class="spec-pill"><span class="spec-dot"></span>3840 × 2160 UHD</div>
+          <div class="spec-pill"><span class="spec-dot"></span>239 Hand-Rendered Frames</div>
+          <div class="spec-pill"><span class="spec-dot"></span>Sacred Heritage</div>
+        </div>
+        <div class="scroll-prompt">
+          <div class="scroll-arrow">
+            <span>↓</span>
+          </div>
+          <span>Scroll down to begin unboxing</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Chapter 2 -->
+    <section class="story-section" id="section-1" data-index="1">
+      <div class="story-card card-right">
+        <div class="card-badge">CRAFTSMANSHIP • CHAPTER II</div>
+        <h2 class="card-title">Unwrap Divine Prosperity</h2>
+        <p class="card-desc">
+          Gilded ribbons part as royal hinges open with silken grace.
+          Every contour reflects centuries of royal Mughal and classical Indian filigree artistry.
+        </p>
+        <div class="feature-grid">
+          <div class="feature-item">
+            <span class="feature-icon">✨</span>
+            <div class="feature-text">
+              <strong>Gold Inlay</strong>
+              <span>Embossed geometric symmetry</span>
+            </div>
+          </div>
+          <div class="feature-item">
+            <span class="feature-icon">🪔</span>
+            <div class="feature-text">
+              <strong>Pure Brass</strong>
+              <span>Sanctified ritual metalwork</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Chapter 3: Peak Light Burst -->
+    <section class="story-section" id="section-2" data-index="2">
+      <div class="story-card card-center light-burst">
+        <div class="card-badge gold">DIVINE LIGHT • CHAPTER III</div>
+        <h2 class="card-title glow-title">Radiance Unleashed</h2>
+        <p class="card-quote">
+          “तमसो मा ज्योतिर्गमय — From darkness, lead me unto eternal light.”
+        </p>
+        <p class="card-desc">
+          A transcendent burst of golden brilliance floods the senses. 
+          The light signifies the triumph of wisdom over ignorance, hope over despair, and love over discord.
+        </p>
+        <div class="glow-indicator">
+          <span class="pulsing-halo"></span>
+          <span class="light-text">Maximum Brilliance Reached</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Chapter 4 -->
+    <section class="story-section" id="section-3" data-index="3">
+      <div class="story-card card-left">
+        <div class="card-badge">AUSPICIOUS OFFERINGS • CHAPTER IV</div>
+        <h2 class="card-title">Sacred Treasures</h2>
+        <p class="card-desc">
+          Delicately unveiled within: auspicious brass deepams, fragrant royal sweets, and blessings of Mahalakshmi and Lord Ganesha.
+        </p>
+        <div class="treasure-cards">
+          <div class="treasure-card">
+            <span class="treasure-icon">🪔</span>
+            <h4>Kuber Deepam</h4>
+            <p>Carved with sacred motifs</p>
+          </div>
+          <div class="treasure-card">
+            <span class="treasure-icon">🍯</span>
+            <h4>Kesar Mithai</h4>
+            <p>Infused with Kashmiri saffron</p>
+          </div>
+          <div class="treasure-card">
+            <span class="treasure-icon">🪙</span>
+            <h4>Lakshmi Coin</h4>
+            <p>Token of boundless prosperity</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Chapter 5: Finale -->
+    <section class="story-section" id="section-4" data-index="4">
+      <div class="story-card card-center finale-card">
+        <div class="card-badge celebratory">CELEBRATION • CHAPTER V</div>
+        <h2 class="card-title finale-title">Shubh Deepavali</h2>
+        <p class="card-desc">
+          May the divine glow of Diwali fill your home with eternal joy, supreme peace, vibrant health, and unending abundance.
+        </p>
+        
+        <div class="finale-actions">
+          <button id="btn-create-card" class="btn-primary">
+            <span>✨ Share Festive Greeting</span>
+          </button>
+          <button id="btn-replay" class="btn-secondary">
+            <span>↺ Replay Experience</span>
+          </button>
+          <button id="btn-fireworks" class="btn-accent">
+            <span>🎆 Launch Sparklers</span>
+          </button>
+        </div>
+
+        <div class="festive-footer-note">
+          Crafted with 4K UHD Scroll Animation • 60 FPS Canvas Engine
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Personalized Greeting Modal -->
+  <div class="modal-backdrop hidden" id="greeting-modal">
+    <div class="modal-card">
+      <button class="modal-close" id="modal-close-btn">&times;</button>
+      
+      <div class="modal-header">
+        <span class="modal-icon">🪔</span>
+        <h3>Personalized Diwali Wish</h3>
+        <p>Send a bespoke royal greeting to your loved ones</p>
+      </div>
+
+      <div class="modal-body">
+        <div class="input-group">
+          <label for="greet-to">To (Recipient Name):</label>
+          <input type="text" id="greet-to" placeholder="e.g. Dear Sharma Family, My Friend Ananya" value="Beloved Family & Friends">
+        </div>
+
+        <div class="input-group">
+          <label for="greet-from">From (Your Name):</label>
+          <input type="text" id="greet-from" placeholder="e.g. Avid & Family" value="With Love & Prayers">
+        </div>
+
+        <div class="input-group">
+          <label for="greet-message">Blessing Message:</label>
+          <textarea id="greet-message" rows="3">May the divine radiance of Diwali bring abundant peace, good health, limitless prosperity, and auspicious new beginnings to your home!</textarea>
+        </div>
+
+        <!-- Live Preview Card -->
+        <div class="card-preview" id="card-preview">
+          <div class="card-preview-inner">
+            <div class="preview-diya">🪔</div>
+            <div class="preview-to" id="preview-to">To: Beloved Family & Friends</div>
+            <div class="preview-msg" id="preview-msg">“May the divine radiance of Diwali bring abundant peace, good health, limitless prosperity, and auspicious new beginnings to your home!”</div>
+            <div class="preview-from" id="preview-from">— With Love & Prayers</div>
+            <div class="preview-sub">✨ Shubh Deepavali 2026 ✨</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button id="btn-copy-card" class="btn-primary">
+          <span>📋 Copy Greeting Text</span>
+        </button>
+        <button id="btn-sparkle-card" class="btn-accent">
+          <span>✨ Celebrate with Sparks!</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Keyboard Shortcuts Modal -->
+  <div class="modal-backdrop hidden" id="help-modal">
+    <div class="modal-card help-card">
+      <button class="modal-close" id="help-close-btn">&times;</button>
+      <h3>Keyboard Shortcuts</h3>
+      <div class="shortcuts-list">
+        <div class="shortcut-row"><kbd>Space</kbd> <span>Play / Pause Cinematic Mode</span></div>
+        <div class="shortcut-row"><kbd>←</kbd> / <kbd>→</kbd> <span>Step 1 frame backward / forward</span></div>
+        <div class="shortcut-row"><kbd>Shift</kbd> + <kbd>→</kbd> <span>Jump 10 frames forward</span></div>
+        <div class="shortcut-row"><kbd>M</kbd> <span>Toggle Ambient Meditative Sound</span></div>
+        <div class="shortcut-row"><kbd>C</kbd> <span>Toggle Fit Mode (Cover vs Contain)</span></div>
+        <div class="shortcut-row"><kbd>F</kbd> <span>Toggle Fullscreen</span></div>
+        <div class="shortcut-row"><kbd>Home</kbd> / <kbd>End</kbd> <span>Jump to Start / End of animation</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="toast hidden" id="toast">
+    <span class="toast-icon">✨</span>
+    <span class="toast-msg" id="toast-msg">Copied!</span>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
+
